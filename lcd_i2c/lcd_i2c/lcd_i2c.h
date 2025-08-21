@@ -8,12 +8,6 @@ extern "C" {
 #include "stm32f10x.h"
 #include "delay.h"
 
-#define LCD_I2C_ADDR		0x27 << 1
-#define LCD_BACKLIGHT		0x08
-#define LCD_ENABLE			0x04
-#define LCD_RW					0x02
-#define LCD_RS					0x01
-
 void LCD_I2C_GPIO_Init(I2C_TypeDef *I2Cx);
 void LCD_I2C_Init(I2C_TypeDef *I2Cx);
 void LCD_I2C_SendCmd(uint8_t cmd);

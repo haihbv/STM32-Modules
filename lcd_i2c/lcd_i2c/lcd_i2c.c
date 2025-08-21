@@ -1,4 +1,11 @@
 #include "lcd_i2c.h"
+#include <stdarg.h>
+
+#define LCD_I2C_ADDR		(0x27 << 1)
+#define LCD_BACKLIGHT		0x08
+#define LCD_ENABLE			0x04
+#define LCD_RW					0x02
+#define LCD_RS					0x01
 
 static I2C_TypeDef* _i2c_port;
 
@@ -142,3 +149,4 @@ void LCD_I2C_NextLine(void)
 	current_now = (current_now + 1) % 2;
 	LCD_I2C_Goto(current_now, 0);
 }
+
